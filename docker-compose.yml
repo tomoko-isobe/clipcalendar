@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  ruby: &app
+    build: .
+    volumes:
+      - ".:/usr/src/app"
+      - "bundle:/usr/local/bundle"
+    command: "pry"
+volumes:
+  bundle:
