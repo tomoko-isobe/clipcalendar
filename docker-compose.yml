@@ -6,6 +6,6 @@ services:
     volumes:
       - ".:/usr/src/app"
       - "bundle:/usr/local/bundle"
-    command: "pry"
+    command: "irb"
 volumes:
   bundle:

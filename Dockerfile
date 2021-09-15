@@ -11,4 +11,4 @@ RUN bundle install
 
 COPY . .
 
-CMD ["pry"]
+CMD ["irb"]
