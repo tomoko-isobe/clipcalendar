@@ -1,5 +1,4 @@
 require 'clip_calendar/date_format'
-#require "clip_calendar/version"
 
 module ClipCalendar
 
@@ -8,14 +7,14 @@ module ClipCalendar
 
   class Core
 
-    def initialize
+    def initialize(argv)
 
       # 引数チェック
-      raise ArgumentNumberError  unless ARGV.count == 2
+      raise ArgumentNumberError, "### Wrong numbers of input (expected: 2, actual: #{argv.count})"  unless argv.count == 2
       begin
-        @dates= DateFormat.parse(ARGV[0])..DateFormat.parse(ARGV[1])
+        @dates= DateFormat.parse(argv[0])..DateFormat.parse(argv[1])
       rescue ArgumentError
-        raise ArgumentTypeError
+        raise ArgumentTypeError, "### invalid argment type: "
       end
 
     end

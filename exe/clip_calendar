@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require "clip_calendar"
+
+ClipCalendar::Cli.new
