@@ -2,8 +2,8 @@ require 'clip_calendar/date_format'
 
 module ClipCalendar
 
-  class ArgumentNumberError < ArgumentError; end
-  class ArgumentTypeError < ArgumentError; end
+  class ArgumentNumberError < StandardError; end
+  class ArgumentTypeError < StandardError; end
 
   class Core
 

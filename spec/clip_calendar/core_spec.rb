@@ -25,7 +25,6 @@ RSpec.describe ClipCalendar::Core do
       subject{ -> { ClipCalendar::Core.new(input) } }
 
       context("引数が0個"){ let(:input){ [] }; it{ is_expected.to raise_error ClipCalendar::ArgumentNumberError } }
-      context("引数が1個"){ let(:input){ ["2020-05-18"] }; it{ is_expected.to raise_error ClipCalendar::ArgumentNumberError } }
       context("引数が3個"){ let(:input){ ["2020-05-18","2020-05-22","2020-05-27"] }; it{ is_expected.to raise_error ClipCalendar::ArgumentNumberError } }
 
       context("日付形式が異なる"){ let(:input){ ["2020年05月18日","2020年05月22日"] }; it{ is_expected.to raise_error ClipCalendar::ArgumentTypeError } }
