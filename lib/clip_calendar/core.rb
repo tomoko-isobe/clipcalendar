@@ -9,9 +9,11 @@ module ClipCalendar
 
     def initialize(argv)
 
-      # 引数チェック
       begin
         case argv.count
+        when 0
+          start_date= Date.today
+          @dates= start_date .. (start_date+5)
         when 1
           start_date= DateFormat.parse(argv[0])
           @dates= start_date .. (start_date+5)
