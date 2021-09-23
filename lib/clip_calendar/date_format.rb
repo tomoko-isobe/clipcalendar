@@ -13,7 +13,7 @@ module ClipCalendar
       super(str)
     end
 
-    def to_s
+    def to_s(format= nil)
       dw = ["日", "月", "火", "水", "木", "金", "土"]
       self.strftime("%Y/%m/%d(#{dw[wday]})")
     end
