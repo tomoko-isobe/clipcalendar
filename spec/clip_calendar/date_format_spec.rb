@@ -20,5 +20,7 @@ RSpec.describe ClipCalendar::DateFormat do
     }
 
     context("書式なし"){ let(:format){ nil }; it { is_expected.to eq "2020/05/18(月)" } }
+    # stftimeの書式を踏襲するが、日本語の曜日だけ独自に「%wjp」を追加する
+    context("既定の書式"){ let(:format){ "%Y/%m/%d(%wjp)" }; it { is_expected.to eq "2020/05/18(月)" } }
   end
 end
