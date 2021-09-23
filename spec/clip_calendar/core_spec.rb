@@ -32,6 +32,13 @@ RSpec.describe ClipCalendar::Core do
       end
     end
 
+    context "書式付き" do
+      subject{ ClipCalendar::Core.new(["2020-05-18","2020-05-18"], format).output }
+
+      context("既定の書式"){ let(:format){ "%Y/%m/%d(%wjp)" }; it { is_expected.to eq("2020/05/18(月)") } }
+
+    end
+
     context "誤った入力" do
       subject{ -> { ClipCalendar::Core.new(input) } }
 
