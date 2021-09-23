@@ -7,7 +7,8 @@ module ClipCalendar
 
   class Core
 
-    def initialize(argv)
+    def initialize(argv, format=nil)
+      @format= format
       
       begin
         case argv.count
@@ -29,7 +30,7 @@ module ClipCalendar
     end
 
     def output
-      @dates.map { |date| date.to_s }.join("\n")
+      @dates.map { |date| date.to_s(@format) }.join("\n")
     end
 
   end
