@@ -21,12 +21,12 @@ RSpec.describe ClipCalendar::Core do
       end
 
       context "開始日・終了日を省略" do
-        let(:input){ [""] }
+        let(:input){ [] }
         let(:expected){
           today= Date.today
           dates= today .. (today+5)
           wdays= "日月火水木金土".split(//)
-          dates.map{|d| d.strftime("%Y/%M/%d")+ "("+ wdays[d.wday]+ ")"}.join("\n")
+          dates.map{|d| d.strftime("%Y/%m/%d")+ "("+ wdays[d.wday]+ ")"}.join("\n")
         }
         it{ is_expected.to eq(expected) }
       end

@@ -8,11 +8,11 @@ module ClipCalendar
   class Core
 
     def initialize(argv)
-
+      
       begin
         case argv.count
         when 0
-          start_date= Date.today
+          start_date= DateFormat.parse(Date.today.to_s)
           @dates= start_date .. (start_date+5)
         when 1
           start_date= DateFormat.parse(argv[0])
